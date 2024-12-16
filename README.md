@@ -7,3 +7,11 @@ Historical: This code was refactored to follow the MVVM architecture. Prior to t
 **Who can discover the cause of the crashes?**
 
 **Update:** Claude.ai found the nub of the problem instantly.
+
+## Summary of the Cause
+1. Removing the *ViewThatFits* from ResultPointsView in ResultPointsView.swift prevents the crash, or,
+2. Removing the *animation* from ChangePointsView in ChangePointsView.swift also prevents the crash, or, 
+3. Removing the *Text("hello world")* in the ContentView in ContentView.swift also prevents the crash, or, 
+4. Removing the *if* statement in the DisplayOnePointView also prevents the crash.
+
+I'm pretty sure that number 1 is the real culprit. ViewThatFits cannot figure which view to use because of the animation etc. Points 2 to 4 are just coincidental. They tip the scale  making the ViewThatFits have to work too hard to reach a decision and the app crashes.
