@@ -15,3 +15,10 @@ Historical: This code was refactored to follow the MVVM architecture. Prior to t
 4. Removing the *if* statement in the DisplayOnePointView also prevents the crash.
 
 I'm pretty sure that number 1 is the real culprit. ViewThatFits cannot figure which view to use because of the animation etc. Points 2 to 4 are just coincidental. They tip the scale  making the ViewThatFits have to work too hard to reach a decision and the app crashes.
+
+## Xcode Fix
+Apple replied today to my ticket to say the problem has now been now fixed:
+Xcode 16.3 beta (16E5104o)
+https://developer.apple.com/download/ 
+
+Ticket: [FB16236881](https://feedbackassistant.apple.com/feedback/16236881)
